@@ -10,8 +10,13 @@
 ├── fasttext
 │   ├── fasttext.ipynb
 │   └── text_classifier.py
+├── __init__.py
 ├── news_data.npz
-├── preprocessing.ipynb
+├── news_data.zip
 ├── readme.md
-└── spam_data.npz
+├── spam_data.npz
+├── spam_data.zip
+├── text_classifier.py
+└── utils.py
+
 ```

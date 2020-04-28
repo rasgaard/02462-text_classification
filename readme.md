@@ -1,6 +1,7 @@
 # Exam project in 02462 - Signals and data
 
 ## Directory structure (with .gitignore'd files)
+```
 .
 ├── 02462_project2020.pdf
 ├── baseline
@@ -13,3 +14,4 @@
 ├── preprocessing.ipynb
 ├── readme.md
 └── spam_data.npz
+```

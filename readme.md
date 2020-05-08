@@ -29,14 +29,13 @@ formatted as real, could be, text(first paragraph). gathered from frontpage of h
 - 0,3/2 https://www.bbc.com/news/business-52392366
 - 0 https://www.bbc.com/news/world-us-canada-52584774 
 - 0 https://www.bbc.com/news/world-europe-52585162
+- 0, 3 https://www.bbc.com/news/uk-england-suffolk-52566082
+- 1, 3 https://www.bbc.com/sport/av/athletics/51332721 
+- 1 https://www.bbc.com/sport/formula1/52568642
+- 1 https://www.bbc.com/sport/boxing/52573766
 - 2 https://www.bbc.com/news/business-52570600
 - 2 https://www.bbc.com/news/business-52580950 
 - 2, 3 https://www.bbc.com/news/business-52570714 
 - 3 https://www.bbc.com/news/science-environment-52550973 
 - 3 https://www.bbc.com/news/technology-52572381
-- 1, 3 https://www.bbc.com/sport/av/athletics/51332721 
-- 1 https://www.bbc.com/sport/formula1/52568642
-- 1 https://www.bbc.com/sport/boxing/52573766
-- 0, 3 https://www.bbc.com/news/uk-england-suffolk-52566082
 - 3 https://www.bbc.com/news/science-environment-52560812 
-

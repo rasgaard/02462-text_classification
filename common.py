@@ -13,3 +13,17 @@ def load_data(file):
 
     return train, test
 
+def load_similar_news(filename):
+    new_news = {}
+    texts = []
+    labels = []
+    with open(filename,'r', encoding='utf-8') as file:
+        for line in file:
+            elements = line.split();
+            labels.append(int(elements[0]))
+            text = (" ".join(elements[1:]))
+            texts.append(text)
+    new_news['texts'] = np.asarray(texts)
+    new_news['labels'] = np.asarray(labels)
+    return new_news
+

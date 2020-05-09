@@ -71,12 +71,12 @@ def plot_pca(pca, y_train, PC_range, num_texts):
     
     cdict = {i: colors[i] for i in range(n_label)}
     label_dict = {i: considered_classes[i] for i in range(n_label)}
-    
+    plt.figure(figsize=(5,5))
     for i in range(n_label):
         indices = np.where(class_idx == i)
         plt.scatter(X_proj[0,indices], X_proj[1,indices],
 color=cdict[i], label=label_dict[i], s=10)
-    
+
     plt.legend(loc='best')
     plt.xlabel('Principal Component axis 1')
     plt.ylabel('Principal Component axis 2')

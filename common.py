@@ -55,14 +55,14 @@ def get_train_emb(X_train, embedding, embed_dim=50):
     return np.array([embedding(text) for text in X_train]).T.reshape(embed_dim, -1)
 
 
-def plot_pca(pca, y_train, PC_range, num_texts):
+def plot_pca(pca, y_train, PC_range, num_texts=None):
     eigenValues, eigenVectors, data = pca
     X_proj = eigenVectors[:,PC_range[0]:PC_range[1]].T@data
     
     #plot for the selected two principal components
     n_label = len(np.unique(y_train))
     colors = cm.rainbow(np.linspace(0, 1, n_label))
-    class_idx = y_train
+    class_idx = y_train[:num_texts]
 
     if n_label == 2:
         considered_classes = ['not-spam','spam']
@@ -71,16 +71,14 @@ def plot_pca(pca, y_train, PC_range, num_texts):
     
     cdict = {i: colors[i] for i in range(n_label)}
     label_dict = {i: considered_classes[i] for i in range(n_label)}
-    plt.figure(figsize=(5,5))
+    plt.figure(figsize=(10,7))
     for i in range(n_label):
         indices = np.where(class_idx == i)
-        plt.scatter(X_proj[0,indices], X_proj[1,indices],
-color=cdict[i], label=label_dict[i], s=10)
+        plt.scatter(X_proj[0,indices], X_proj[1,indices], color=cdict[i], label=label_dict[i], s=10)
 
     plt.legend(loc='best')
     plt.xlabel('Principal Component axis 1')
     plt.ylabel('Principal Component axis 2')
-    plt.show()
 
 
 def pca_variance_plots(eigenValues, output_total=False):
@@ -94,7 +92,7 @@ def pca_variance_plots(eigenValues, output_total=False):
         cumsum += eigenValues[i]
         total_var_explained[i]=(cumsum/summ)
 
-    fig = plt.figure(figsize=(12,3))
+    plt.figure(figsize=(12,3))
     plt.subplot(121)
     # this might not be calculated correctly (line 10)
     plt.plot(relative_var)

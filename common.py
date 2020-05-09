@@ -94,14 +94,14 @@ def pca_variance_plots(eigenValues):
         cumsum += eigenValues[i]
         total_var_explained[i]=(cumsum/summ)
 
-    fig = plt.figure(figsize=(12,4))
+    fig = plt.figure(figsize=(12,3))
     plt.subplot(121)
     # this might not be calculated correctly (line 10)
     plt.plot(relative_var)
     plt.xlabel("Principal component")
     plt.ylabel("Proportion of Variance Explained")
     plt.title('variance explained')
-    plt.subplot(122) 
+    plt.subplot(122)
     plt.plot(total_var_explained)
     plt.xlabel("Principal component")
     plt.ylabel("% of variance explained")

@@ -83,7 +83,7 @@ color=cdict[i], label=label_dict[i], s=10)
     plt.show()
 
 
-def pca_variance_plots(eigenValues):
+def pca_variance_plots(eigenValues, output_total=False):
     embed_dim = eigenValues.shape[0]
     summ = eigenValues.sum()
     cumsum = 0
@@ -106,3 +106,5 @@ def pca_variance_plots(eigenValues):
     plt.xlabel("Principal component")
     plt.ylabel("% of variance explained")
     plt.title('Cumulative variance explained')
+    if output_total:
+        return total_var_explained

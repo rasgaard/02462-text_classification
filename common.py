@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import re
+import pandas as pd
 
 def load_data(file):
     if file == "news":
@@ -30,6 +31,13 @@ def load_similar_news(filename):
     new_news['texts'] = np.asarray(texts)
     new_news['labels'] = np.asarray(labels)
     return new_news
+
+def load_emails(filename):
+    emails = {}
+    df = pd.read_csv(filename)
+    emails['texts'] = np.asarray(df['text'])
+    emails['labels'] = np.asarray(df['spam'])
+    return emails
 
 
 def pca(X_train_emb):

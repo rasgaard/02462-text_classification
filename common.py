@@ -85,8 +85,8 @@ def plot_pca(pca, y_train, PC_range, num_texts=None):
         plt.scatter(X_proj[0,indices], X_proj[1,indices], color=cdict[i], label=label_dict[i], s=10)
 
     plt.legend(loc='best')
-    plt.xlabel('Principal Component axis 1')
-    plt.ylabel('Principal Component axis 2')
+    plt.xlabel(f'Principal Component axis {PC_range[0]+1}')
+    plt.ylabel(f'Principal Component axis {PC_range[1]}')
 
 
 def pca_variance_plots(eigenValues, output_total=False):
@@ -102,15 +102,15 @@ def pca_variance_plots(eigenValues, output_total=False):
 
     plt.figure(figsize=(12,3))
     plt.subplot(121)
-    # this might not be calculated correctly (line 10)
     plt.plot(relative_var)
     plt.xlabel("Principal component")
     plt.ylabel("Proportion of Variance Explained")
-    plt.title('variance explained')
+    plt.title('Variance explained')
     plt.subplot(122)
     plt.plot(total_var_explained)
     plt.xlabel("Principal component")
     plt.ylabel("% of variance explained")
     plt.title('Cumulative variance explained')
+    plt.tight_layout()
     if output_total:
         return total_var_explained

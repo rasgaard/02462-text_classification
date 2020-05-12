@@ -1,24 +1,33 @@
 # Exam project in 02462 - Signals and data
+This repository contains project work in the course "Signals and data" taught at the Technical University of Denmark. It serves as experiments for a comparison between two text classification methods.
 
-## Directory structure (with .gitignore'd files)
+The project is divided into two notebooks. Common functions are found in `common.py`.
+
+The experiments for each methods can be found in in the notebook in their respective folders.
+
+## Directory structure 
 ```
 .
-├── 02462_project2020.pdf
 ├── baseline
 │   ├── baseline.ipynb
 │   └── glove.6B.50d.txt
+├── common.py
+├── emails.csv
 ├── fasttext
+│   ├── CV
 │   ├── fasttext.ipynb
-│   └── text_classifier.py
+│   ├── news_fasttext_classifier.p
+│   ├── news_train_emb.p
+│   ├── spam_fasttext_classifier.p
+│   ├── spam_train_emb.p
+│   └── text_classifier.py 
 ├── __init__.py
 ├── news_data.npz
 ├── news_data.zip
 ├── readme.md
+├── similar_news.txt
 ├── spam_data.npz
-├── spam_data.zip
-├── text_classifier.py
-└── utils.py
-
+└── spam_data.zip
 ```
 
 ## Articles used
